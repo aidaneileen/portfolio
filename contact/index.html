@@ -16,30 +16,27 @@
         </ul>
     </nav>
     
-    <h1>Aidan Averett: Contact</h1>
+    <h1>Contact</h1>
     <p>If you'd like to get in touch, please reach out through my email or find me on GitHub!</p>
 
     <form action="mailto:aidaneileen123@gmail.com" method="POST" enctype="text/plain">
-        <label>
-          Your Email:
-          <input type="email" name="email" required>
-        </label>
-        <br><br>
-      
-        <label>
-          Subject:
-          <input name="subject" required>
-        </label>
-        <br><br>
-      
-        <label>
-          Message:
-          <textarea name="body" rows="5" cols="30" required></textarea>
-        </label>
-        <br><br>
-      
-        <button>Send</button>
-      </form>
+        <div class="form-row">
+            <label for="email">Your Email:</label>
+            <input type="email" name="email" id="email" required>
+          </div>
+        
+          <div class="form-row">
+            <label for="subject">Subject:</label>
+            <input name="subject" id="subject" required>
+          </div>
+        
+          <div class="form-row">
+            <label for="body">Message:</label>
+            <textarea name="body" id="body" rows="5" required></textarea>
+          </div>
+        
+          <button>Send</button>
+        </form>
 
 </body>
 </html>
