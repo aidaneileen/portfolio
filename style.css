@@ -53,39 +53,42 @@ nav ul {
 /* ============================= */
 
 /* ============================= */
-/* Contact Form Styles           */
+/* Contact Form                  */
 /* ============================= */
-input,
-textarea,
-button {
-  font: inherit;
-}
-
 form {
-  max-width: 600px;
-  margin: 2rem auto;
-  padding: 1rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1em;
+  width: 100%;
+  margin: 2rem 0;
 }
 
 .form-row {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 1rem;
+  display: contents; 
 }
 
 label {
+  display: contents; 
   font-weight: bold;
-  margin-bottom: 0.5rem;
 }
 
-input,
-textarea {
+label > span {
+  grid-column: 1;
+  align-self: center;
+}
+
+label > input,
+label > textarea {
+  grid-column: 2;
+  width: 100%;
   padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 6px;
+  box-sizing: border-box;
 }
 
 button {
+  grid-column: 1 / -1;
   width: 100%;
   padding: 0.6rem 1.2rem;
   border: none;
@@ -98,5 +101,36 @@ button {
 
 button:hover {
   background-color: oklch(65% 50% 0);
+}
+/* ============================= */
+
+/* ============================= */
+/* Projects Styles               */
+/* ============================= */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+  gap: 1.5em; /* optional: adds spacing between grid items */
+  padding: 1em; /* optional: adds breathing room around the grid */
+}
+
+.projects article {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 3;
+  gap: 1em;
+}
+
+.projects h2 {
+    margin: 0;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.1;
+    text-wrap: balance;
+}
+
+h1 {
+  font-size: 400%;
 }
 /* ============================= */
