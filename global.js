@@ -44,4 +44,3 @@ for (let p of pages) {
   li.appendChild(a);
   ul.appendChild(li);
 }
-
