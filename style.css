@@ -1,37 +1,15 @@
-/* ========== Global Reset ========== */
-*,
-*::before,
-*::after {
+/* Global Styles */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-/* ========== Root Variables ========== */
-:root {
-  --primary-color: #f06292;
-  --accent-color: #d81b60;
-  --neutral-color: #333;
-  --light-background: #fff;
-  --light-grey: #f9f9f9;
-  --medium-grey: #666;
-}
-
-/* ========== Base Styles ========== */
-body {
   font-family: Arial, sans-serif;
-  background-color: var(--light-grey);
-  color: var(--neutral-color);
+}
+
+body {
+  background-color: #f4f4f4;
+  color: #333;
   line-height: 1.6;
-  font-size: 1rem;
-}
-
-ul {
-  list-style: none;
-}
-
-li {
-  margin: 0;
 }
 
 a {
@@ -40,32 +18,24 @@ a {
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
-a:hover {
-  transform: scale(1.05);
-  background-color: var(--neutral-color);
-  border-radius: 4px;
+/* Primary Color Variables */
+:root {
+  --primary-color: #f06292; 
+  --accent-color: #d81b60; 
 }
 
-img,
-.about-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 20px auto;
+/* Utility Styles */
+ul {
+  list-style: none; /* shorthand for list-style-type: none; */
 }
 
-/* ========== Focus Styles for Accessibility ========== */
-a:focus,
-button:focus,
-input:focus,
-textarea:focus {
-  outline: 2px solid var(--primary-color);
-  outline-offset: 2px;
+li {
+  margin: 0;
 }
 
-/* ========== Navigation ========== */
+/* Navigation Styles */
 nav {
-  background-color: var(--neutral-color);
+  background-color: #333;
   padding: 1rem;
 }
 
@@ -73,70 +43,74 @@ nav ul {
   display: flex;
   justify-content: center;
   gap: 2rem;
-  flex-wrap: wrap;
 }
 
 nav a {
-  color: var(--light-background);
+  color: white;
   font-size: 1.1rem;
   font-weight: 500;
+  transition: color 0.3s ease;
 }
 
-nav a:hover,
-nav a.current {
+nav a:hover {
   color: var(--primary-color);
-  font-weight: bold;
 }
 
-/* ========== Layout ========== */
+nav a.current {
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+/* Container Section */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
 }
 
-.page-header {
-  background-color: var(--light-background);
-  text-align: center;
-  padding: 2rem 1rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.page-name {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-}
-
+/* Section Styling */
 .section-title {
   text-align: center;
   font-size: 2rem;
   margin: 2rem 0 0;
-  color: var(--neutral-color);
+  color: #444;
 }
 
-/* ========== Grids ========== */
-.resume-grid,
-.projects {
-  display: grid;
-  gap: 2rem;
-  padding: 2rem 0;
-}
-
+/* Grid Layouts */
 .resume-grid {
+  display: grid;
   grid-template-columns: repeat(1, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 2rem 6rem;;
 }
 
-.projects {
-  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
-}
-
-/* ========== Cards ========== */
+/* Resume Item Styling */
 .grid-item {
-  background-color: var(--light-background);
+  background-color: #fff;
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-item h3 {
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.grid-item p {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.grid-item a {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.grid-item a:hover {
+  color: var(--accent-color);
+  transform: scale(1.05);
 }
 
 .grid-item:hover {
@@ -144,22 +118,22 @@ nav a.current {
   transform: translateY(-5px);
 }
 
-.grid-item h3 {
-  font-size: 1.4rem;
-  color: var(--neutral-color);
-}
-
-.grid-item p {
-  font-size: 1.1rem;
-  color: var(--medium-grey);
-}
-
-.grid-item a,
 .grid-item .section-description {
-  color: var(--primary-color);
+  color: var(--primary-color); 
 }
 
-/* ========== Lists ========== */
+.about-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+}
+
+.date {
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
 .duties-list {
   list-style: disc;
   padding-left: 1.5rem;
@@ -171,9 +145,27 @@ nav a.current {
   margin-bottom: 0.5rem;
 }
 
-/* ========== Contact Form ========== */
+.links a {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.links a:hover {
+  color: var(--accent-color);
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Contact Form */
 .contact-form {
-  background-color: var(--light-background);
+  background-color: #fff;
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -188,6 +180,7 @@ nav a.current {
   display: block;
   font-size: 1.4rem;
   margin-bottom: 0.5rem;
+  color: #333;
 }
 
 .form-row input,
@@ -197,16 +190,22 @@ nav a.current {
   margin-bottom: 0.8rem;
   border: 1px solid #ddd;
   border-radius: 4px;
-  background-color: var(--light-grey);
   font-size: 1rem;
+  background-color: #f9f9f9;
+  color: #333;
 }
 
-button,
-input[type="submit"] {
+.form-row input:focus,
+.form-row textarea:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+button {
   width: 100%;
   padding: 1rem;
   background-color: var(--primary-color);
-  color: var(--light-background);
+  color: #fff;
   font-size: 1.1rem;
   border: none;
   border-radius: 4px;
@@ -214,80 +213,23 @@ input[type="submit"] {
   transition: background-color 0.3s ease;
 }
 
-button:hover,
-input[type="submit"]:hover {
+button:hover {
   background-color: var(--accent-color);
 }
 
-/* ========== Responsive Design ========== */
-@media (max-width: 1200px) {
-  .container {
-    padding: 0 1rem;
-  }
-  .page-name {
-    font-size: 2rem;
-  }
-}
-
-@media (max-width: 1024px) {
-  nav ul {
-    flex-direction: column;
-    gap: 1rem;
-    text-align: center;
-  }
-  .resume-grid {
-    grid-template-columns: 1fr;
-    padding: 2rem 0;
-  }
-  .page-header {
-    padding: 1.5rem 1rem;
-  }
-}
-
+/* Responsive Styles */
 @media (max-width: 768px) {
-  .page-name {
-    font-size: 1.8rem;
+  .resume-grid {
+      grid-template-columns: 1fr;
   }
-  .projects {
-    grid-template-columns: repeat(auto-fill, minmax(12em, 1fr));
-    padding: 1.5rem;
-  }
-  .contact-form {
-    padding: 1.5rem;
-  }
-  button,
-  input[type="submit"] {
-    font-size: 1rem;
-  }
-}
 
-@media (max-width: 480px) {
-  .container {
-    padding: 0 0.5rem;
-  }
-  .page-name {
-    font-size: 1.6rem;
-  }
-  .resume-grid,
-  .projects {
-    grid-template-columns: 1fr;
-    padding: 1rem 0;
-  }
   nav ul {
-    gap: 0.5rem;
+      flex-direction: column;
+      gap: 1rem;
+      text-align: center;
   }
+
   nav a {
-    font-size: 1rem;
-    padding: 0.5rem;
-    display: block;
-    text-align: center;
-  }
-  .contact-form {
-    padding: 1rem;
-  }
-  button,
-  input[type="submit"] {
-    padding: 0.8rem;
-    font-size: 0.9rem;
+      font-size: 1.2rem;
   }
 }
