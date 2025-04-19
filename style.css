@@ -1,136 +1,253 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
 body {
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+}
 
-       font: 100%/1.5 system-ui;
-       max-width: 100ch;           
-       margin-inline: auto;         
-       padding-inline: 1rem;      
-  }
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
 
+/* Primary Color Variables */
 :root {
-     --color-accent: oklch(65% 50% 0); 
- }
+  --primary-color: #f06292; 
+  --accent-color: #d81b60; 
+}
 
-html {
-     accent-color: var(--color-accent);  
- }
+/* Utility Styles */
+ul {
+  list-style: none; /* shorthand for list-style-type: none; */
+}
 
-/* ============================= */
-/* Navigation Menu               */
-/* ============================= */
+li {
+  margin: 0;
+}
+
+/* Navigation Styles */
+nav {
+  background-color: #333;
+  padding: 1rem;
+}
+
 nav ul {
-     display: contents;
- }
- 
- nav li {
-     display: contents;
- }
- 
- nav {
-     display: flex;
-     justify-content: space-around;
-     margin-bottom: 20px;
-     border-bottom: 1px solid oklch(80% 3% 200);
- }
- 
- nav a {
-     text-decoration: none;
-     color: inherit;
-     text-align: center;
-     padding: 0.5em;
-     flex: 1;
- }
- 
- nav a:hover {
-     border-bottom: 3px solid var(--color-accent);
-     background-color: oklch(85% 10% 5);
- }
- 
- nav a.current {
-     font-weight: bold;
-     border-bottom: 0.4em solid oklch(80% 3% 200);
-     padding-bottom: 0.3em;
- }
-/* ============================= */
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
 
-/* ============================= */
-/* Contact Form                  */
-/* ============================= */
-form {
+nav a {
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--primary-color);
+}
+
+nav a.current {
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+/* Container Section */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Header Section */
+.page-header {
+  background-color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.page-name {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact-info {
+  font-size: 1.1rem;
+}
+
+.contact-info a {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.contact-info a:hover {
+  color: var(--accent-color);
+}
+
+/* Section Styling */
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin: 2rem 0 0;
+  color: #444;
+}
+
+/* Grid Layouts */
+.resume-grid {
   display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 1em;
-  width: 100%;
+  grid-template-columns: repeat(1, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 2rem 6rem;;
+}
+
+/* Resume Item Styling */
+.grid-item {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-item h3 {
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.grid-item p {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.grid-item a {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.grid-item a:hover {
+  color: var(--accent-color);
+  transform: scale(1.05);
+}
+
+.grid-item:hover {
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+.grid-item .section-description {
+  color: var(--primary-color); 
+}
+
+.about-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+}
+
+.date {
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+.duties-list {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-top: 1rem;
+}
+
+.duty-item {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.links a {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.links a:hover {
+  color: var(--accent-color);
+}
+
+/* Contact Form */
+.contact-form {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin: 2rem 0;
 }
 
 .form-row {
-  display: contents; 
+  margin-bottom: 1.5rem;
 }
 
-label {
-  display: contents; 
-  font-weight: bold;
+.form-row label {
+  display: block;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: #333;
 }
 
-label > span {
-  grid-column: 1;
-  align-self: center;
-}
-
-label > input,
-label > textarea {
-  grid-column: 2;
+.form-row input,
+.form-row textarea {
   width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  box-sizing: border-box;
+  padding: 1rem;
+  margin-bottom: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.form-row input:focus,
+.form-row textarea:focus {
+  border-color: var(--primary-color);
+  outline: none;
 }
 
 button {
-  grid-column: 1 / -1;
   width: 100%;
-  padding: 0.6rem 1.2rem;
+  padding: 1rem;
+  background-color: var(--primary-color);
+  color: #fff;
+  font-size: 1.1rem;
   border: none;
-  background-color: oklch(80% 3% 200);
-  color: white;
-  border-radius: 6px;
+  border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: oklch(65% 50% 0);
-}
-/* ============================= */
-
-/* ============================= */
-/* Projects Styles               */
-/* ============================= */
-.projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
-  gap: 1.5em; /* optional: adds spacing between grid items */
-  padding: 1em; /* optional: adds breathing room around the grid */
+  background-color: var(--accent-color);
 }
 
-.projects article {
-  display: grid;
-  grid-template-rows: subgrid;
-  grid-row: span 3;
-  gap: 1em;
-}
-
-.projects h2 {
-    margin: 0;
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .resume-grid {
+      grid-template-columns: 1fr;
   }
-  
-  h1, h2, h3, h4, h5, h6 {
-    line-height: 1.1;
-    text-wrap: balance;
-}
 
-h1 {
-  font-size: 400%;
+  nav ul {
+      flex-direction: column;
+      gap: 1rem;
+      text-align: center;
+  }
+
+  nav a {
+      font-size: 1.2rem;
+  }
 }
-/* ============================= */
