@@ -20,7 +20,6 @@ const BASE_PATH = (location.hostname === "localhost" || location.hostname === "1
   ? "/"
   : "/portfolio/";
 
-// Normalize pathname (removes trailing slash)
 const normalize = path => path.replace(/\/$/, "");
 
 for (let p of pages) {
@@ -32,7 +31,6 @@ for (let p of pages) {
   a.href = url;
   a.textContent = title;
 
-  // Normalize both to compare accurately
   const currentPath = normalize(location.pathname);
   const linkPath = normalize(new URL(a.href).pathname);
 
