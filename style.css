@@ -181,6 +181,15 @@ nav a.current {
   color: var(--accent-color);
 }
 
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 /* Contact Form */
 .contact-form {
   background-color: #fff;
