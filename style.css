@@ -42,6 +42,8 @@ a {
 
 a:hover {
   transform: scale(1.05);
+  background-color: var(--neutral-color);
+  border-radius: 4px;
 }
 
 img,
@@ -50,6 +52,15 @@ img,
   height: auto;
   display: block;
   margin: 20px auto;
+}
+
+/* ========== Focus Styles for Accessibility ========== */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
 }
 
 /* ========== Navigation ========== */
@@ -108,16 +119,15 @@ nav a.current {
 .projects {
   display: grid;
   gap: 2rem;
+  padding: 2rem 0;
 }
 
 .resume-grid {
   grid-template-columns: repeat(1, minmax(250px, 1fr));
-  padding: 2rem 6rem;
 }
 
 .projects {
   grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
-  padding: 2rem 0;
 }
 
 /* ========== Cards ========== */
@@ -191,13 +201,8 @@ nav a.current {
   font-size: 1rem;
 }
 
-.form-row input:focus,
-.form-row textarea:focus {
-  border-color: var(--primary-color);
-  outline: none;
-}
-
-button {
+button,
+input[type="submit"] {
   width: 100%;
   padding: 1rem;
   background-color: var(--primary-color);
@@ -209,7 +214,8 @@ button {
   transition: background-color 0.3s ease;
 }
 
-button:hover {
+button:hover,
+input[type="submit"]:hover {
   background-color: var(--accent-color);
 }
 
@@ -218,7 +224,6 @@ button:hover {
   .container {
     padding: 0 1rem;
   }
-
   .page-name {
     font-size: 2rem;
   }
@@ -230,12 +235,10 @@ button:hover {
     gap: 1rem;
     text-align: center;
   }
-
   .resume-grid {
     grid-template-columns: 1fr;
-    padding: 2rem 1rem;
+    padding: 2rem 0;
   }
-
   .page-header {
     padding: 1.5rem 1rem;
   }
@@ -245,17 +248,15 @@ button:hover {
   .page-name {
     font-size: 1.8rem;
   }
-
   .projects {
     grid-template-columns: repeat(auto-fill, minmax(12em, 1fr));
     padding: 1.5rem;
   }
-
   .contact-form {
     padding: 1.5rem;
   }
-
-  button {
+  button,
+  input[type="submit"] {
     font-size: 1rem;
   }
 }
@@ -264,32 +265,28 @@ button:hover {
   .container {
     padding: 0 0.5rem;
   }
-
   .page-name {
     font-size: 1.6rem;
   }
-
   .resume-grid,
   .projects {
     grid-template-columns: 1fr;
     padding: 1rem 0;
   }
-
   nav ul {
     gap: 0.5rem;
   }
-
   nav a {
     font-size: 1rem;
     padding: 0.5rem;
     display: block;
+    text-align: center;
   }
-
   .contact-form {
     padding: 1rem;
   }
-
-  button {
+  button,
+  input[type="submit"] {
     padding: 0.8rem;
     font-size: 0.9rem;
   }
