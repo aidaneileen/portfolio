@@ -82,18 +82,6 @@ nav a.current {
   margin-bottom: 0.5rem;
 }
 
-.contact-info {
-  font-size: 1.1rem;
-}
-
-.contact-info a {
-  color: var(--primary-color);
-  text-decoration: underline;
-}
-
-.contact-info a:hover {
-  color: var(--accent-color);
-}
 
 /* Section Styling */
 .section-title {
