@@ -339,7 +339,6 @@ button:hover {
     font-size: 1.2rem;
   }
 
-  .resume-grid,
   .side-by-side {
     grid-template-columns: 1fr;
     padding: 1rem;
