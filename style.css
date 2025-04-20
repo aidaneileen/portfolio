@@ -9,7 +9,7 @@
   }
   
   body {
-    background: linear-gradient(135deg, #f4f4f4 0%, #fafafa 100%);
+    background: #f4f4f4;
     color: #333;
     line-height: 1.6;
     padding: 0;
@@ -59,6 +59,10 @@
     color: var(--accent-color);
   }
   
+  html {
+    color-scheme: light dark;
+  }
+
   /* =========================================
      4. Navigation Styles
      ========================================= */
