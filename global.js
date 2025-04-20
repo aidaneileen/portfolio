@@ -1,4 +1,6 @@
-// Navigation
+/* =========================================
+   1. Navigation Bar
+========================================= */
 console.log('IT’S ALIVE!');
 
 function $$(selector, context = document) {
@@ -44,8 +46,9 @@ for (let p of pages) {
   li.appendChild(a);
   ul.appendChild(li);
 }
-
-// Create Color Scheme Switch
+/* =========================================
+   2. Create Color Scheme Switch
+========================================= */
 document.body.insertAdjacentHTML(
   'afterbegin',
   `
@@ -60,10 +63,8 @@ document.body.insertAdjacentHTML(
   `
 );
 
-// Reference to the switcher
 const themeSwitch = document.getElementById('theme-switcher');
 
-// Helper function to apply color scheme
 function setColorScheme(scheme) {
   if (scheme === 'light dark') {
     document.documentElement.removeAttribute('data-user-color-scheme');
@@ -74,16 +75,14 @@ function setColorScheme(scheme) {
   }
 }
 
-// Listen for changes, apply theme, and save preference
 themeSwitch.addEventListener('change', function () {
   const value = this.value;
-  setColorScheme(value);  // Apply the selected color scheme
-  localStorage.colorScheme = value;  // Save the selected color scheme
+  setColorScheme(value);  
+  localStorage.colorScheme = value;  
 });
 
-// Load saved preference (if any) on page load
 if ('colorScheme' in localStorage) {
   const savedScheme = localStorage.colorScheme;
-  setColorScheme(savedScheme);  // Apply the saved color scheme
-  themeSwitch.value = savedScheme;  // Set the select dropdown to match
+  setColorScheme(savedScheme);  
+  themeSwitch.value = savedScheme; 
 }
