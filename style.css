@@ -1,235 +1,312 @@
-/* Global Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
-
-body {
-  background-color: #f4f4f4;
-  color: #333;
-  line-height: 1.6;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-/* Primary Color Variables */
-:root {
-  --primary-color: #f06292; 
-  --accent-color: #d81b60; 
-}
-
-/* Utility Styles */
-ul {
-  list-style: none; /* shorthand for list-style-type: none; */
-}
-
-li {
-  margin: 0;
-}
-
-/* Navigation Styles */
-nav {
-  background-color: #333;
-  padding: 1rem;
-}
-
-nav ul {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-}
-
-nav a {
-  color: white;
-  font-size: 1.1rem;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-nav a:hover {
-  color: var(--primary-color);
-}
-
-nav a.current {
-  font-weight: bold;
-  color: var(--primary-color);
-}
-
-/* Container Section */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-/* Section Styling */
-.section-title {
-  text-align: center;
-  font-size: 2rem;
-  margin: 2rem 0 0;
-  color: #444;
-}
-
-/* Grid Layouts */
-.resume-grid {
-  display: grid;
-  grid-template-columns: repeat(1, minmax(250px, 1fr));
-  gap: 2rem;
-  padding: 2rem 6rem;;
-}
-
-/* Resume Item Styling */
-.grid-item {
-  background-color: #fff;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.grid-item h3 {
-  font-size: 1.4rem;
-  color: #333;
-}
-
-.grid-item p {
-  font-size: 1.1rem;
-  color: #666;
-}
-
-.grid-item a {
-  color: var(--primary-color);
-  text-decoration: underline;
-}
-
-.grid-item a:hover {
-  color: var(--accent-color);
-  transform: scale(1.05);
-}
-
-.grid-item:hover {
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-  transform: translateY(-5px);
-}
-
-.grid-item .section-description {
-  color: var(--primary-color); 
-}
-
-.about-img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 20px;
-}
-
-.date {
-  font-style: italic;
-  font-size: 0.9rem;
-}
-
-.duties-list {
-  list-style: disc;
-  padding-left: 1.5rem;
-  margin-top: 1rem;
-}
-
-.duty-item {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
-}
-
-.links a {
-  color: var(--primary-color);
-  text-decoration: underline;
-}
-
-.links a:hover {
-  color: var(--accent-color);
-}
-
-.projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
-  gap: 2rem;
-  padding: 2rem 0;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Contact Form */
-.contact-form {
-  background-color: #fff;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin: 2rem 0;
-}
-
-.form-row {
-  margin-bottom: 1.5rem;
-}
-
-.form-row label {
-  display: block;
-  font-size: 1.4rem;
-  margin-bottom: 0.5rem;
-  color: #333;
-}
-
-.form-row input,
-.form-row textarea {
-  width: 100%;
-  padding: 1rem;
-  margin-bottom: 0.8rem;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 1rem;
-  background-color: #f9f9f9;
-  color: #333;
-}
-
-.form-row input:focus,
-.form-row textarea:focus {
-  border-color: var(--primary-color);
-  outline: none;
-}
-
-button {
-  width: 100%;
-  padding: 1rem;
-  background-color: var(--primary-color);
-  color: #fff;
-  font-size: 1.1rem;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: var(--accent-color);
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .resume-grid {
-      grid-template-columns: 1fr;
+/* =========================================
+   1. Reset and Global Styles
+   ========================================= */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', Arial, sans-serif;
   }
-
+  
+  body {
+    background: linear-gradient(135deg, #f4f4f4 0%, #fafafa 100%);
+    color: #333;
+    line-height: 1.6;
+    padding: 0;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  li {
+    margin: 0;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* =========================================
+     2. Color Variables
+     ========================================= */
+  :root {
+    --primary-color: #f06292;
+    --accent-color: #d81b60;
+  }
+  
+  /* =========================================
+     3. Typography
+     ========================================= */
+  h3 {
+    font-size: 1.4rem;
+    color: #333;
+  }
+  
+  p {
+    font-size: 1.1rem;
+    color: #666;
+  }
+  
+  a {
+    color: var(--primary-color);
+    text-decoration: underline;
+  }
+  
+  a:hover {
+    color: var(--accent-color);
+  }
+  
+  /* =========================================
+     4. Navigation Styles
+     ========================================= */
+  nav {
+    background-color: #333;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
   nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none; 
+    font-size: 1.3rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  nav a:hover,
+  nav a.current {
+    color: var(--primary-color);
+  }
+  
+  nav a.current {
+    font-weight: bold;
+  }
+  
+  /* =========================================
+     5. Layout Containers
+     ========================================= */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .section {
+    background-color: #fdfdfd;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .section-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #444;
+    padding: 1rem;
+    margin-top: 1rem;
+    letter-spacing: 1px;
+  }
+  
+  /* =========================================
+     6. Grids and Cards
+     ========================================= */
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+    gap: 2rem;
+    margin: 0 auto;
+  }
+  
+  .single-display {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin: 0 auto;
+  }
+  
+  .grid-item {
+    background-color: #fdfdfd;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.8s ease forwards;
+  }
+  
+  .grid-item .section-description {
+    color: var(--primary-color);
+  }
+  
+  .grid-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  /* =========================================
+     7. List Styles
+     ========================================= */
+  .date {
+    font-style: italic;
+    font-size: 1rem;
+  }
+  
+  .duties-list {
+    list-style: disc;
+    padding-left: 1.5rem;
+    margin-top: 1rem;
+  }
+  
+  .duty-item {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* =========================================
+     8. Side-by-Side Layout
+     ========================================= */
+  .side-by-side {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    background-color: #fdfdfd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    margin: auto;
+    transition: all 0.3s ease;
+    animation: fadeIn 0.8s ease forwards;
+  }
+  
+  .side-by-side img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .side-by-side p {
+    font-size: 1.1rem;
+    color: #666;
+    padding: 2rem;
+  }
+  
+  /* =========================================
+     9. Contact Form
+     ========================================= */
+  .contact-form {
+    display: grid;
+    background-color: #fdfdfd;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    animation: fadeIn 0.8s ease forwards;
+  }
+  
+  .form-row {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-row label {
+    display: block;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+  
+  .form-row input,
+  .form-row textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+    color: #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .form-row input:focus,
+  .form-row textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px var(--primary-color);
+    outline: none;
+  }
+  
+  /* =========================================
+     10. Buttons
+     ========================================= */
+  button {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: #fff;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  button:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* =========================================
+     11. Animations
+     ========================================= */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* =========================================
+     12. Responsive Design
+     ========================================= */
+  @media (max-width: 768px) {
+    nav ul {
       flex-direction: column;
       gap: 1rem;
       text-align: center;
-  }
-
-  nav a {
+    }
+  
+    nav a {
       font-size: 1.2rem;
+    }
+  
+    .resume-grid,
+    .side-by-side {
+      grid-template-columns: 1fr;
+      padding: 1rem;
+    }
+  
+    .side-by-side img {
+      max-width: 100%;
+    }
+  
+    body {
+      padding: 1rem;
+    }
+  
+    button {
+      font-size: 1.2rem;
+    }
   }
-}
+  
