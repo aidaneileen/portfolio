@@ -43,6 +43,7 @@
     --input-background: #f9f9f9; 
     --input-border: #ddd; 
     --nav-text-color: white; 
+    --border-color: #ccc;
   }
 
   /* Light Mode */
@@ -55,6 +56,7 @@ html[data-user-color-scheme="light"] {
   --input-background: #f9f9f9;
   --input-border: #ddd;
   --nav-text-color: white;
+  --border-color: #ccc;
 }
 
 /* Dark Mode */
@@ -67,6 +69,7 @@ html[data-user-color-scheme="dark"] {
   --input-background: #333;
   --input-border: #555;
   --nav-text-color: #e0e0e0;
+  --border-color: #444;
 }
 
 /* Automatic Mode (system preference) */
@@ -145,11 +148,15 @@ html {
   .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
   
   .section {
     background-color: var(--section-background);
+    border: 1px solid var(--border-color);
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -187,6 +194,7 @@ html {
   
   .grid-item {
     background-color: var(--section-background);
+    border: 1px solid var(--border-color);
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -230,6 +238,7 @@ html {
     display: grid;
     grid-template-columns: 1fr 4fr;
     background-color: var(--section-background);
+    border: 1px solid var(--border-color);
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     align-items: center;
@@ -258,6 +267,7 @@ html {
   .contact-form {
     display: grid;
     background-color: var(--section-background);
+    border: 1px solid var(--border-color);
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -280,7 +290,7 @@ html {
   .form-row textarea {
     width: 100%;
     padding: 1rem;
-    border: 1px solid var(--input-border);
+    border: 1px solid var(--border-color);
     border-radius: 4px;
     font-size: 1rem;
     background-color: var(--input-background);
