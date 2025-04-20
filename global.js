@@ -1,3 +1,4 @@
+// Navigation
 console.log('IT’S ALIVE!');
 
 function $$(selector, context = document) {
@@ -42,4 +43,47 @@ for (let p of pages) {
   let li = document.createElement('li');
   li.appendChild(a);
   ul.appendChild(li);
+}
+
+// Create Color Scheme Switch
+document.body.insertAdjacentHTML(
+  'afterbegin',
+  `
+  <label class="color-scheme">
+    Theme:
+    <select id="theme-switcher">
+      <option value="light dark">Automatic</option>
+      <option value="light">Light</option>
+      <option value="dark">Dark</option>
+    </select>
+  </label>
+  `
+);
+
+// Reference to the switcher
+const themeSwitch = document.getElementById('theme-switcher');
+
+// Helper function to apply color scheme
+function setColorScheme(scheme) {
+  if (scheme === 'light dark') {
+    document.documentElement.removeAttribute('data-user-color-scheme');
+    document.documentElement.style.colorScheme = 'light dark';
+  } else {
+    document.documentElement.setAttribute('data-user-color-scheme', scheme);
+    document.documentElement.style.colorScheme = scheme;
+  }
+}
+
+// Listen for changes, apply theme, and save preference
+themeSwitch.addEventListener('change', function () {
+  const value = this.value;
+  setColorScheme(value);  // Apply the selected color scheme
+  localStorage.colorScheme = value;  // Save the selected color scheme
+});
+
+// Load saved preference (if any) on page load
+if ('colorScheme' in localStorage) {
+  const savedScheme = localStorage.colorScheme;
+  setColorScheme(savedScheme);  // Apply the saved color scheme
+  themeSwitch.value = savedScheme;  // Set the select dropdown to match
 }

@@ -15,8 +15,14 @@
     <h2 class="section-title">About Me</h2>
     <div class="side-by-side">
         <img src="images/picture_of_me.jpg" alt="Aidan Averett">
-        <div>
-            <p>I am a senior at the University of California, San Diego (UCSD) majoring in Interdisciplinary Computing and the Arts (ICAM), with active involvement in K-12 leadership and event coordination on campus. I currently serve as the Events Officer for both the Video Game Development Club and Triton Gaming.</p>
-        </div>
-    </div>
-</div>
+      <div>
+        <p>I am a senior at the University of California, San Diego (UCSD) majoring in Interdisciplinary Computing and the Arts (ICAM), with active involvement in K-12 leadership and event coordination on campus. I currently serve as the Events Officer for both the Video Game Development Club and Triton Gaming.</p>
+      </div>
+  </div>
+</body>
+<script>
+    document.querySelectorAll("nav a").forEach(function(a) {
+      a.classList.toggle("current", a.href === location.href);
+    });
+</script>
+</html>

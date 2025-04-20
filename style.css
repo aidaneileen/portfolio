@@ -9,8 +9,8 @@
   }
   
   body {
-    background: #f4f4f4;
-    color: #333;
+    background: var(--background-color);
+    color: var(--text-color);
     line-height: 1.6;
     padding: 0;
   }
@@ -33,41 +33,85 @@
      2. Color Variables
      ========================================= */
   :root {
-    --primary-color: #f06292;
-    --accent-color: #d81b60;
+    --primary-color: #f06292; 
+    --accent-color: #d81b60; 
+    --background-color: #f4f4f4; 
+    --section-background: #ffffff; 
+    --text-color: #333; 
+    --secondary-text-color: #666; 
+    --nav-background: #333; 
+    --input-background: #f9f9f9; 
+    --input-border: #ddd; 
+    --nav-text-color: white; 
   }
+
+  /* Light Mode */
+html[data-user-color-scheme="light"] {
+  --background-color: #f4f4f4;
+  --section-background: #ffffff;
+  --text-color: #333;
+  --secondary-text-color: #666;
+  --nav-background: #333;
+  --input-background: #f9f9f9;
+  --input-border: #ddd;
+  --nav-text-color: white;
+}
+
+/* Dark Mode */
+html[data-user-color-scheme="dark"] {
+  --background-color: #121212;
+  --section-background: #1e1e1e;
+  --text-color: #e0e0e0;
+  --secondary-text-color: #b0b0b0;
+  --nav-background: #1e1e1e;
+  --input-background: #333;
+  --input-border: #555;
+  --nav-text-color: #e0e0e0;
+}
+
+/* Automatic Mode (system preference) */
+html {
+  color-scheme: light dark;
+  --background-color: #f4f4f4;
+  --section-background: #ffffff;
+  --text-color: #333;
+  --secondary-text-color: #666;
+  --nav-background: #333;
+  --input-background: #f9f9f9;
+  --input-border: #ddd;
+  --nav-text-color: white;
+}
   
   /* =========================================
      3. Typography
      ========================================= */
-  h3 {
-    font-size: 1.4rem;
-    color: #333;
-  }
-  
-  p {
-    font-size: 1.1rem;
-    color: #666;
-  }
-  
-  a {
-    color: var(--primary-color);
-    text-decoration: underline;
-  }
-  
-  a:hover {
-    color: var(--accent-color);
-  }
-  
-  html {
-    color-scheme: light dark;
-  }
-
+     h3 {
+      font-size: 1.4rem;
+      color: var(--text-color);
+    }
+    
+    p {
+      font-size: 1.1rem;
+      color: var(--secondary-text-color);
+    }
+    
+    a {
+      color: var(--primary-color);
+      text-decoration: underline;
+    }
+    
+    a:hover {
+      color: var(--accent-color);
+    }
+    
+    html {
+      color-scheme: light dark;
+    }
   /* =========================================
      4. Navigation Styles
      ========================================= */
   nav {
-    background-color: #333;
+    background-color: var(--nav-background);
     padding: 2rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   }
@@ -75,11 +119,11 @@
   nav ul {
     display: flex;
     justify-content: center;
-    gap: 3rem;
+    gap: 2rem;
   }
   
   nav a {
-    color: white;
+    color: var(--nav-text-color); /* White by default */
     text-decoration: none; 
     font-size: 1.3rem;
     font-weight: 500;
@@ -88,7 +132,7 @@
   
   nav a:hover,
   nav a.current {
-    color: var(--primary-color);
+    color: var(--primary-color); /* Light pink on hover */
   }
   
   nav a.current {
@@ -105,7 +149,7 @@
   }
   
   .section {
-    background-color: #fdfdfd;
+    background-color: var(--section-background);
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -118,7 +162,7 @@
   .section-title {
     text-align: center;
     font-size: 2rem;
-    color: #444;
+    color: var(--text-color);
     padding: 1rem;
     margin-top: 1rem;
     letter-spacing: 1px;
@@ -142,7 +186,7 @@
   }
   
   .grid-item {
-    background-color: #fdfdfd;
+    background-color: var(--section-background);
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -185,7 +229,7 @@
   .side-by-side {
     display: grid;
     grid-template-columns: 1fr 4fr;
-    background-color: #fdfdfd;
+    background-color: var(--section-background);
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     align-items: center;
@@ -204,7 +248,7 @@
   
   .side-by-side p {
     font-size: 1.1rem;
-    color: #666;
+    color: var(--secondary-text-color);
     padding: 2rem;
   }
   
@@ -213,7 +257,7 @@
      ========================================= */
   .contact-form {
     display: grid;
-    background-color: #fdfdfd;
+    background-color: var(--section-background);
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -229,18 +273,18 @@
     display: block;
     font-size: 1.4rem;
     margin-bottom: 0.5rem;
-    color: #333;
+    color: var(--text-color);
   }
   
   .form-row input,
   .form-row textarea {
     width: 100%;
     padding: 1rem;
-    border: 1px solid #ddd;
+    border: 1px solid var(--input-border);
     border-radius: 4px;
     font-size: 1rem;
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: var(--input-background);
+    color: var(--text-color);
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
   }
   
@@ -314,3 +358,27 @@
     }
   }
   
+    /* =========================================
+     13. Color Scheme Switcher
+     ========================================= */
+     .color-scheme {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: var(--section-background, #fdfdfd);
+      padding: 0.3rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      font-size: 0.6rem;
+      z-index: 1000;;
+    }
+    
+    .color-scheme select {
+      padding: 0.3rem;
+      font-size: 0.6rem;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      background: inherit;
+      color: inherit;
+    }
+    
