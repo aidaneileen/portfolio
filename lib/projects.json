@@ -7,11 +7,11 @@
         "link": "INSERT LINK HERE"
     },
     {
-        "title": "Project 2",
+        "title": "Project 2: Persuasive Visualizations",
         "year": "2025",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, repellendus!",
-        "link": "INSERT LINK HERE"
+        "image": "../projects/project2/viz1.png",
+        "description": "Visualizations supporting and refuting a proposition.",
+        "link": "../projects/project2/index.html"
     },
     {
         "title": "Project 3",

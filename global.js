@@ -131,37 +131,34 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
 
   projects.forEach((project) => {
     const article = document.createElement('article');
-    article.classList.add('grid-item');
+    article.classList.add('grid-item'); 
+    article.style.cursor = 'pointer'; 
 
-    const heading = document.createElement(headingLevel);
-    heading.textContent = project.title || 'Untitled Project';
+    const link = document.createElement('a');
+    link.href = project.link || '#';
+    //link.target = '_blank';
+    link.style.textDecoration = 'none';
+    link.style.color = 'inherit';
 
     const image = document.createElement('img');
     image.src = project.image || '';
     image.alt = project.title ? `${project.title} image` : 'Project image';
 
+    const heading = document.createElement(headingLevel);
+    heading.textContent = project.title || 'Untitled Project';
+    heading.style.marginTop = '1rem';
+
     const description = document.createElement('p');
     description.textContent = project.description || 'No description available.';
 
-    const links = document.createElement('p');
-    links.classList.add('links');
-
-    if (project.link) {
-      const viewLink = document.createElement('a');
-      viewLink.href = project.link;
-      viewLink.textContent = 'View';
-      viewLink.target = '_blank';
-      links.appendChild(viewLink);
-    }
-
-    article.appendChild(heading);
-    article.appendChild(image);
-    article.appendChild(description);
-    article.appendChild(links);
-
+    link.appendChild(image);
+    link.appendChild(heading);
+    link.appendChild(description);
+    article.appendChild(link);
     containerElement.appendChild(article);
   });
 }
+
 
 /* =========================================
    5. GitHub API - Fetch User Data
