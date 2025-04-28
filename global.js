@@ -92,15 +92,12 @@ if ('colorScheme' in localStorage) {
 ========================================= */
 export async function fetchJSON(url) {
   try {
-    // Fetch the JSON file from the given URL
     const response = await fetch(url);
 
-    // Check if the fetch was successful
     if (!response.ok) {
       throw new Error(`Failed to fetch projects: ${response.statusText}`);
     }
 
-    // Parse and return the JSON data
     const data = await response.json();
     return data;
 
@@ -113,22 +110,18 @@ export async function fetchJSON(url) {
    4. Projects Page - Render
 ========================================= */
 export function renderProjects(projects, containerElement, headingLevel = 'h2') {
-  // Check if containerElement is valid
   if (!containerElement) {
     console.error('renderProjects error: containerElement is invalid.');
     return;
   }
 
-  // Check if projects is an array
   if (!Array.isArray(projects)) {
     console.error('renderProjects error: projects is not an array.');
     return;
   }
 
-  // Clear existing content
   containerElement.innerHTML = '';
 
-  // Handle empty project list
   if (projects.length === 0) {
     const placeholder = document.createElement('p');
     placeholder.textContent = 'No projects available at the moment.';
@@ -136,12 +129,10 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
     return;
   }
 
-  // Loop through and create each project
   projects.forEach((project) => {
     const article = document.createElement('article');
     article.classList.add('grid-item');
 
-    // Dynamically create a heading (h2, h3, etc.)
     const heading = document.createElement(headingLevel);
     heading.textContent = project.title || 'Untitled Project';
 
@@ -163,13 +154,18 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
       links.appendChild(viewLink);
     }
 
-    // Assemble the article
     article.appendChild(heading);
     article.appendChild(image);
     article.appendChild(description);
     article.appendChild(links);
 
-    // Add the article to the container
     containerElement.appendChild(article);
   });
+}
+
+/* =========================================
+   5. GitHub API - Fetch User Data
+========================================= */
+export async function fetchGitHubData(username) {
+  return fetchJSON(`https://api.github.com/users/${username}`);
 }

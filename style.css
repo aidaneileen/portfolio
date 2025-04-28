@@ -168,7 +168,7 @@ nav a.current {
 ========================================= */
 .projects {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   margin: 0 auto;
 }
@@ -379,4 +379,39 @@ button:hover {
   background: inherit;
   color: inherit;
   border-radius: 4px;
+}
+
+/* =========================================
+   14. Github Stats
+========================================= */
+#profile-stats {
+  background: var(--section-background);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  text-align: center;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+#profile-stats dl {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  text-align: center;
+}
+
+#profile-stats dt {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  grid-row: 1;
+}
+
+#profile-stats dd {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin: 0;
+  grid-row: 2;
 }

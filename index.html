@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aidan Averett: Personal site and portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <script type="module" src="global.js"></script>
+
 </head>
 
 <body>
-
 <!-- About Me Section -->
 <div class="container">
     <h2 class="section-title">About Me</h2>
@@ -18,11 +17,21 @@
       <div>
         <p>I am a senior at the University of California, San Diego (UCSD) majoring in Interdisciplinary Computing and the Arts (ICAM), with active involvement in K-12 leadership and event coordination on campus. I currently serve as the Events Officer for both the Video Game Development Club and Triton Gaming.</p>
       </div>
-  </div>
+    </div>
+
+<h2 class="section-title">Latest Projects</h2>
+<div class="projects"></div>
+
+<h2 class="section-title">Profile Stats</h2>
+<div id="profile-stats"></div>
+</div>
+
 </body>
 <script>
     document.querySelectorAll("nav a").forEach(function(a) {
       a.classList.toggle("current", a.href === location.href);
     });
-</script>
+</script>    
+<script src="global.js" type="module"></script>
+<script src="index.js" type="module" defer></script>
 </html>

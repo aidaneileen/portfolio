@@ -6,10 +6,10 @@ async function main() {
   renderProjects(projects, projectsContainer, 'h2');
 
 
-const titleElement = document.querySelector('.section-title');
-if (titleElement) {
-  titleElement.textContent = `Projects (${projects.length})`;
-}
+  const projectsTitle = document.querySelector('.section-title');
+  if (projectsTitle) {
+    projectsTitle.textContent = `${projects.length} Projects`;
+  }
 }
 
 main();

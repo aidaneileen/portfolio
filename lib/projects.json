@@ -1,72 +1,84 @@
 [
     {
         "title": "Project 1",
+        "year": "2025",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, repellendus!",
         "link": "INSERT LINK HERE"
     },
     {
         "title": "Project 2",
+        "year": "2025",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, repellendus!",
         "link": "INSERT LINK HERE"
     },
     {
         "title": "Project 3",
+        "year": "2025",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, repellendus!",
         "link": "INSERT LINK HERE"
     },
     {
         "title": "Project 4",
+        "year": "2025",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, repellendus!",
         "link": "INSERT LINK HERE"
     },
     {
         "title": "Project 5",
+        "year": "2024",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, repellendus!",
         "link": "INSERT LINK HERE"
     },
     {
         "title": "Project 6",
+        "year": "2024",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, repellendus!",
         "link": "INSERT LINK HERE"
     },
     {
         "title": "Project 7",
+        "year": "2024",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, repellendus!",
         "link": "INSERT LINK HERE"
     },
     {
         "title": "Project 8",
+        "year": "2024",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, repellendus!",
         "link": "INSERT LINK HERE"
     },
     {
         "title": "Project 9",
+        "year": "2023",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, repellendus!",
         "link": "INSERT LINK HERE"
     },
     {
         "title": "Project 10",
+        "year": "2023",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, repellendus!",
         "link": "INSERT LINK HERE"
     },
     {
         "title": "Project 11",
+        "year": "2023",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, repellendus!",
         "link": "INSERT LINK HERE"
     },
     {
         "title": "Project 12",
+        "year": "2023",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, repellendus!",
         "link": "INSERT LINK HERE"
