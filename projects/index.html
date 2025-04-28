@@ -1,95 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects</title>
-    <link rel="stylesheet" href="../style.css">
-    <script type="module" src="../global.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects</title>
+  <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
-    <div class="container">
-        <h2 class="section-title">Projects</h2>
-    <div class="projects">
-        <article class="grid-item">
-            <h3>Project 1</h3>
-            <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="Project 1 Image">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, repellendus!</p>
-            <p class="links"><a href="INSERT LINK HERE">View</a></p>
-        </article>
-        <article class="grid-item">
-            <h3>Project 2</h3>
-            <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="Project 2 Image">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, repellendus!</p>
-            <p class="links"><a href="INSERT LINK HERE">View</a></p>
-        </article>
-        <article class="grid-item">
-            <h3>Project 3</h3>
-            <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="Project 3 Image">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, repellendus!</p>
-            <p class="links"><a href="INSERT LINK HERE">View</a></p>
-        </article>
-        <article class="grid-item">
-            <h3>Project 4</h3>
-            <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="Project 4 Image">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, repellendus!</p>
-            <p class="links"><a href="INSERT LINK HERE">View</a></p>
-        </article>
-        <article class="grid-item">
-            <h3>Project 5</h3>
-            <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="Project 5 Image">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, repellendus!</p>
-            <p class="links"><a href="INSERT LINK HERE">View</a></p>
-        </article>
-        <article class="grid-item">
-            <h3>Project 6</h3>
-            <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="Project 6 Image">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, repellendus!</p>
-            <p class="links"><a href="INSERT LINK HERE">View</a></p>
-        </article>
-        <article class="grid-item">
-            <h3>Project 7</h3>
-            <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="Project 7 Image">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, repellendus!</p>
-            <p class="links"><a href="INSERT LINK HERE">View</a></p>
-        </article>
-        <article class="grid-item">
-            <h3>Project 8</h3>
-            <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="Project 8 Image">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, repellendus!</p>
-            <p class="links"><a href="INSERT LINK HERE">View</a></p>
-        </article>
-        <article class="grid-item">
-            <h3>Project 9</h3>
-            <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="Project 9 Image">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, repellendus!</p>
-            <p class="links"><a href="INSERT LINK HERE">View</a></p>
-        </article>
-        <article class="grid-item">
-            <h3>Project 10</h3>
-            <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="Project 10 Image">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, repellendus!</p>
-            <p class="links"><a href="INSERT LINK HERE">View</a></p>
-        </article>
-        <article class="grid-item">
-            <h3>Project 11</h3>
-            <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="Project 11 Image">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, repellendus!</p>
-            <p class="links"><a href="INSERT LINK HERE">View</a></p>
-        </article>
-        <article class="grid-item">
-            <h3>Project 12</h3>
-            <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="Project 12 Image">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, repellendus!</p>
-            <p class="links"><a href="INSERT LINK HERE">View</a></p>
-        </article>
-    </div>
-    </div>
-</body>
-<script>
+  <div class="container">
+    <h2 class="section-title">Projects</h2>
+    <div class="projects"></div>
+  </div>
+  <script>
     document.querySelectorAll("nav a").forEach(function(a) {
       a.classList.toggle("current", a.href === location.href);
     });
   </script>
+
+  <script type="module" src="../global.js"></script>
+  <script type="module" src="../projects/projects.js"></script>
+</body>
 </html>
