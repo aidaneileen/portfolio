@@ -35,15 +35,17 @@ for (let p of pages) {
   a.href = url;
   a.textContent = title;
 
-  const currentPath = normalize(location.pathname);
-  const linkPath = normalize(new URL(a.href).pathname);
-
-  if (a.host === location.host && (
-    linkPath === currentPath || 
-    (linkPath.endsWith('/projects') && currentPath.startsWith(linkPath))
-  )) {
+  const normalize = path => path.replace(/\/$/, "");
+  const currentPath = normalize(location.pathname.replace(/^\/portfolio/, ""));
+  const linkPath = normalize(new URL(a.href).pathname.replace(/^\/portfolio/, ""));
+  
+  if (
+    a.host === location.host &&
+    (linkPath === currentPath || (linkPath.includes("/projects") && currentPath.startsWith(linkPath)))
+  ) {
     a.classList.add('current');
   }
+  
 
   let li = document.createElement('li');
   li.appendChild(a);
