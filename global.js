@@ -38,7 +38,10 @@ for (let p of pages) {
   const currentPath = normalize(location.pathname);
   const linkPath = normalize(new URL(a.href).pathname);
 
-  if (a.host === location.host && linkPath === currentPath) {
+  if (a.host === location.host && (
+    linkPath === currentPath || 
+    (linkPath.endsWith('/projects') && currentPath.startsWith(linkPath))
+  )) {
     a.classList.add('current');
   }
 
