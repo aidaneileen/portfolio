@@ -138,7 +138,7 @@ nav a.current {
    5. Layout Containers
 ========================================= */
 .container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin-inline: auto;
   padding: 1rem 2rem 2rem;
 }
@@ -207,6 +207,13 @@ nav a.current {
   font-style: italic;
   font-size: 1rem;
   color: var(--date-color);
+}
+
+.date-project {
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--date-color);
+  margin-top: 1rem;
 }
 
 .duties-list {
@@ -414,4 +421,113 @@ button:hover {
   color: var(--text-color);
   margin: 0;
   grid-row: 2;
+}
+
+/* =========================================
+   9. Projects - Pie Plot
+========================================= */
+#projects-pie-plot {
+  max-width: 20em;
+  overflow: visible;
+}
+
+.pie-legend-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 4rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.legend {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+  padding: 2rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--section-background);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  max-width: 100%;
+  align-items: center;  
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 1rem;
+  color: var(--text-color);
+  background: var(--input-background);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  transition: background 0.3s ease;
+}
+
+.legend-item:hover {
+  background: var(--primary-color);
+  color: var(--section-background);
+}
+
+.legend-item .swatch {
+  width: 1.2rem;
+  height: 1.2rem;
+  background-color: var(--color);
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+svg:has(path:hover) path:not(:hover) {
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+path {
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.selected {
+  --color: oklch(60% 45% 0) !important;
+}
+
+path.selected {
+  fill: var(--color) !important;
+}
+
+.legend-item.selected {
+  outline: 2px solid var(--primary-color);
+  border-radius: 6px;
+}
+
+/* =========================================
+   10. Projects - Search Bar
+========================================= */
+.searchBar {
+  width: 100%;
+  margin: 2rem 0;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-color);
+  background: var( --section-background);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.searchBar::placeholder {
+  color: var(--secondary-text-color);
+}
+
+.searchBar:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 5px var(--primary-color);
 }

@@ -141,7 +141,6 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
 
     const link = document.createElement('a');
     link.href = project.link || '#';
-    //link.target = '_blank';
     link.style.textDecoration = 'none';
     link.style.color = 'inherit';
 
@@ -156,9 +155,18 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
     const description = document.createElement('p');
     description.textContent = project.description || 'No description available.';
 
+    const textWrapper = document.createElement('div');
+    textWrapper.appendChild(description);
+
+    // Add the year
+    const year = document.createElement('p');
+    year.classList.add('date-project');
+    year.textContent = `c. ${project.year || 'N/A'}`;
+    textWrapper.appendChild(year);
+
     link.appendChild(image);
     link.appendChild(heading);
-    link.appendChild(description);
+    link.appendChild(textWrapper);
     article.appendChild(link);
     containerElement.appendChild(article);
   });
