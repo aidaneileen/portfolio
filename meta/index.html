@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+<!-- Stats Section -->
+<div class="container">
+    <h2 class="section-title">Meta</h2>
+        <p> This page includes stats about the code of this website.</p>
+        <div id="stats"></div>
+</div>
+
+  <script>
+    document.querySelectorAll("nav a").forEach(function(a) {
+      a.classList.toggle("current", a.href === location.href);
+    });
+  </script>
+
+  <script type="module" src="main.js"></script>
+  <script type="module" src="../global.js"></script>
+  <script type="module" src="../projects/projects.js"></script>
+</body>
+</html>
