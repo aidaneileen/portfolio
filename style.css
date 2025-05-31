@@ -629,8 +629,6 @@ circle.selected {
   display: grid;
   grid-template-columns: 1fr 4fr;
   gap: 0.5rem 1rem;
-  margin-top: 1rem;
-  margin-bottom: 2rem;  
   font-family: 'Poppins', Arial, sans-serif;
   font-size: 1.1rem;
   color: var(--text-color);  
